@@ -11,7 +11,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f5f5dc;
+            background-color: #f5f5dc; /* Cream-colored background */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,15 +22,15 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Subtle shadow for depth */
             padding: 20px;
             border-radius: 10px;
             width: 80%;
-            max-width: 1200px;
+            max-width: 1200px; /* Larger max-width for larger content */
         }
         .profile-img {
-            width: 500px;
+            width: 500px; /* Large size for prominence */
             height: 500px;
             background: url('coffee.jpg') no-repeat center center;
             background-size: cover;
@@ -49,7 +49,7 @@
         .star {
             cursor: pointer;
             color: #ccc;
-            font-size: 3rem;
+            font-size: 3rem; /* Larger stars for better interaction */
             transition: transform 0.2s, color 0.2s;
         }
         .star:hover, .star.selected {
@@ -59,6 +59,7 @@
         .feedback {
             font-size: 1.4rem;
             margin-top: 20px;
+            min-height: 30px; /* Ensures space is allocated for feedback message */
         }
         .business-details {
             text-align: center;
@@ -80,6 +81,7 @@
             transform: scale(1.2);
             transition: transform 0.2s;
         }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -95,6 +97,7 @@
                 font-size: 2.5rem;
             }
         }
+
         @media (max-width: 480px) {
             .profile-img {
                 width: 250px;
@@ -119,6 +122,7 @@
                 <span class="star">&#9733;</span>
                 <span class="star">&#9733;</span>
             </div>
+            <div id="message" class="feedback"></div>
             <div class="business-details">
                 <p>Email: <a href="mailto:info@javabeanscafe.com" class="business-link"><i class="fas fa-envelope"></i> info@javabeanscafe.com</a></p>
                 <p>Website: <a href="http://www.javabeanscafe.com" class="business-link"><i class="fas fa-globe"></i> www.javabeanscafe.com</a></p>
@@ -127,10 +131,35 @@
                 <p class="social-links">
                     <a href="https://facebook.com/javabeanscafe" class="business-link"><i class="fab fa-facebook-f"></i> Facebook</a> |
                     <a href="https://twitter.com/javabeanscafe" class="business-link"><i class="fab fa-twitter"></i> Twitter</a> |
-                    <a href="https://instagram.com/javabeanscafe" class="business-link"><i the="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://instagram.com/javabeanscafe" class="business-link"><i class="fab fa-instagram"></i> Instagram</a>
                 </p>
             </div>
         </div>
     </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const message = document.getElementById('message');
+        const feedbackMessages = [
+            "Poor - Did we let you down?",
+            "Fair - Could be better!",
+            "Good - We're doing okay!",
+            "Very Good - Glad you liked it!",
+            "Excellent - Thanks for loving us!"
+        ];
+
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                updateStars(index);
+                message.textContent = feedbackMessages[index];
+            });
+        });
+
+        function updateStars(index) {
+            stars.forEach((star, idx) => {
+                star.classList.toggle('selected', idx <= index);
+            });
+        }
+    </script>
 </body>
 </html>
