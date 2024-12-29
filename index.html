@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaBeans Café - Customer Rating</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5dc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .profile-img {
+            width: 500px;
+            height: 500px;
+            background: url('coffee.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .rating-system {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .star {
+            cursor: pointer;
+            color: #ccc;
+            font-size: 3rem;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .star:hover, .star.selected {
+            transform: scale(1.5);
+            color: #ffd700;
+        }
+        .feedback {
+            font-size: 1.4rem;
+            margin-top: 20px;
+        }
+        .business-details {
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+        .business-link {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .business-link:hover {
+            color: #0056b3;
+        }
+        .social-links i {
+            margin-right: 8px;
+        }
+        .social-links i:hover {
+            transform: scale(1.2);
+            transition: transform 0.2s;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile-img {
+                width: 350px;
+                height: 350px;
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+            .star {
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+            .star {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-img"></div>
+        <div class="rating-system">
+            <h1>Rate JavaBeans Café</h1>
+            <p class="feedback">Your rating matters! Select stars to rate us!</p>
+            <div class="star-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+            </div>
+            <div class="business-details">
+                <p>Email: <a href="mailto:info@javabeanscafe.com" class="business-link"><i class="fas fa-envelope"></i> info@javabeanscafe.com</a></p>
+                <p>Website: <a href="http://www.javabeanscafe.com" class="business-link"><i class="fas fa-globe"></i> www.javabeanscafe.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" class="business-link"><i class="fas fa-phone"></i> +1 234-567-890</a></p>
+                <p style="font-weight: bold;">Follow us on social media:</p>
+                <p class="social-links">
+                    <a href="https://facebook.com/javabeanscafe" class="business-link"><i class="fab fa-facebook-f"></i> Facebook</a> |
+                    <a href="https://twitter.com/javabeanscafe" class="business-link"><i class="fab fa-twitter"></i> Twitter</a> |
+                    <a href="https://instagram.com/javabeanscafe" class="business-link"><i the="fab fa-instagram"></i> Instagram</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
